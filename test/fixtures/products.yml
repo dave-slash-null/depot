@@ -11,3 +11,9 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+slayer:
+  title: South Of Heaven
+  description: Awesome awesomeness.
+  image_url: south-of-heaven.png
+  price: 20.01
