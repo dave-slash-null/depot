@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
+	<div id='banner'>
+		<%= image_tag('Slayer-Logo.jpg') %>
+		<%= @page_title || "Slayer albums" %>
+	</div>
+	<div id='columns'>
+		<div id='slide'>
+			<ul>
+				<li><a href="http://www.convergecult.com">Home</a></li>
+				<li><a href="http://www.slayer.net/us/home">Slayer</a></li>
+				<li><a href="http://www.megadeth.com">Megadeth</a></li>
+			</ul>
+		</div>
+		<div id='main'>
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
