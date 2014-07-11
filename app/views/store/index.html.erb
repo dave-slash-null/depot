@@ -3,6 +3,9 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog!</h1>
+<% if @looks > 5 %>
+<h2><%= pluralize(@looks, 'view') %> of this page!</h2>
+<% end %>
 
 <% cache ['store', Product.latest] do %>
 	<% @products.each do |product| %>
@@ -13,6 +16,7 @@
 				<p><%= sanitize(product.description) %></p>
 				<div class='price_line'>
 					<span class='price'><%= number_to_currency(product.price) %></span>
+					<%= button_to 'Add to Cart', line_items_path(product_id: product) %>
 				</div>
 			</div>
 		<% end %>
