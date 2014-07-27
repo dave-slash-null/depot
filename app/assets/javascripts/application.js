@@ -15,3 +15,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready( function() {
+	$('.store .entry > img').click( function() {
+		$(this).parent().find(':submit').click();
+	});
+
+	$('.store .entry > h3').click( function() {
+		$(this).parent().find(':submit').click();
+	});
+});
