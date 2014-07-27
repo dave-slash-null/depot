@@ -11,16 +11,20 @@
 		<%= image_tag('Slayer-Logo.jpg') %>
 		<%= @page_title || "Slayer albums" %>
 	</div>
-	<div id='columns'>
-		<div id='side'>
+	<div id="columns">
+		<div id="side">
+			<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+				<%= render @cart %>
+			<% end %>
+
 			<ul>
 				<li><a href='/'>Home</a></li>
 				<li><a href="http://www.slayer.net/us/home">Slayer</a></li>
 				<li><a href="http://www.megadeth.com">Megadeth</a></li>
 			</ul>
-			<h2 id='datetime'><%= date_loaded %></h5>
+			<h2><%= date_loaded %></h5>
 		</div>
-		<div id='main'>
+		<div id="main">
 			<%= yield %>
 		</div>
 	</div>
