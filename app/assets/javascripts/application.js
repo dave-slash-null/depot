@@ -26,3 +26,4 @@ $(document).ready( function() {
 		$(this).parent().find(':submit').click();
 	});
 });
+

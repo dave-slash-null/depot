@@ -37,18 +37,20 @@
 }
 
 #columns {
+
 	background: #141;
 
 	#main {
-		margin-left: 17em;
+		margin-left: 25em;
 		padding: 1em;
 		background: white;
+
 	}
 
 	#side {
 		float: left;
 		padding: 1em 2em;
-		width: 13em;
+		width: 21em;
 		background: #141;
 
 		input {
@@ -75,6 +77,13 @@
 					font-size: large;
 				}
 			}
+		}
+
+		h2.time {
+			font-size: 	smaller;
+			color:		red;
+			position: absolute;
+			bottom: 2em;
 		}
 	}
 }

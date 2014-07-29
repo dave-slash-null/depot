@@ -3,7 +3,7 @@ class StoreController < ApplicationController
 	before_action :set_cart
 	
   def index
-  	@products = Product.order(:title)
+  	@products = Product.order(:price)
   	if session[:counter].nil?
   		session[:counter] = 0
   	end

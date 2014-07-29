@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :date_loaded
 
   def date_loaded
-  	return Time.now
+  	return Time.now.asctime
   end
   
 end

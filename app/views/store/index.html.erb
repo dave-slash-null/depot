@@ -4,7 +4,7 @@
 
 <h1>Your Pragmatic Catalog!</h1>
 <% if @looks > 5 %>
-<h2><%= pluralize(@looks, 'view') %> of this page!</h2>
+<h2 class='looks'><%= pluralize(@looks, 'view') %> of this page!</h2>
 <% end %>
 
 <% cache ['store', Product.latest] do %>

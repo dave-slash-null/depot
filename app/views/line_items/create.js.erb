@@ -1,5 +1,7 @@
-if ($('#cart tr').length == 1) { $('#cart').show('blind', 2000); }
+//if ($('#cart tr').length == 1)
 
 $('#cart').html("<%= escape_javascript render(@cart) %>");
+
+$('#cart').slideDown('slow');
 
 $('#current_item').css({'background-color': '#88ff88'}).animate({'background-color': '#114411'}, 1000)

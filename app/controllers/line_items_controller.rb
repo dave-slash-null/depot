@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:create, :increment, :decrement]
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy, :increment, :decrement]
 
   # GET /line_items
   # GET /line_items.json
@@ -61,10 +61,29 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url }
+      format.html { redirect_to store_path }
       format.json { head :no_content }
+      format.js
     end
   end
+
+  # POST /line_items/1
+  def increment
+    @line_item.quantity = @line_item.quantity + 1
+    respond_to do |format|
+      format.html {redirect_to store_path, notice: "Line item incremented. #{@line_item.quantity}"}
+    end
+  end
+
+  def decrement
+    @line_item = @cart.decrement_line_item_quantity(params[:id])
+    @line_item.save
+    respond_to do |format|
+      format.html {redirect_to store_path, notice: "Line item decremented. #{@line_item.quantity}"}
+      format.js {@current_item = @line_item}
+    end
+  end
+    
 
   private
     # Use callbacks to share common setup or constraints between actions.
