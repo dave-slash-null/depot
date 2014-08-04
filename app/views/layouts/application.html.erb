@@ -24,6 +24,20 @@
 				<li><a href="http://www.slayer.net/us/home">Slayer</a></li>
 				<li><a href="http://www.megadeth.com">Megadeth</a></li>
 			</ul>
+
+			<% unless session[:user_id] %>
+				<%= button_to 'Login', login_path, method: :get %>
+			<% end %>
+
+			<% if session[:user_id] %>
+				<ul>
+					<li><%= link_to 'Orders', orders_path %></li>
+					<li><%= link_to 'Products', products_path %></li>
+					<li><%= link_to 'Users', users_path %></li>
+				</ul>
+				<%= button_to 'Logout', logout_path, method: :delete %>
+			<% end %>
+
 			<h2 class="time" ><%= date_loaded %></h5>
 		</div>
 		<div id="main">

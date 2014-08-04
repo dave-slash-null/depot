@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Wendy Thomas
+  address: MyText
+  email: wendy@thomas.com
+  pay_type: Purchase Order
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString

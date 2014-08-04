@@ -1,0 +1,10 @@
+Hello <%= @order.name %>
+
+First off, let me welcome you to the family by saying <%= @greeting %> Thank you for your recent order from the Slayer Album Store.
+
+Order confirmation <%= order.id %>
+Items ordered:
+
+<%= render(@order.line_items) %>
+
+You will be notified by a separate e-mail when your order ships.
