@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804011049) do
+ActiveRecord::Schema.define(version: 20140804170557) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140804011049) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "nickname"
   end
 
 end
